@@ -5,7 +5,7 @@ tasks:
   - name: validate
     actions:
       - description: Validate...
-        cmd: "echo first test"
+        cmd: "echo second test"
 
   - name: e2e-test
     actions:
