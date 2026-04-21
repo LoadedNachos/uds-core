@@ -148,15 +148,20 @@
       ],
       "allowedVersions": "!/99.99.99/"
     },
+    {
+      "matchPackageNames": ["k3s-io/k3s"],
+      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)[+-]k3s(?<build>\\d+)$"
+    }
   ],
   "customManagers": [
   {
     "customType": "regex",
     "fileMatch": ["(^|/)zarf\\.yaml$"],
     "matchStrings": [
-      "# renovate-tag: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n\\s+default: \"[^:]+:(?<currentValue>[^\"]+)\""
+      "# renovate-tag: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n(?<indent>\\s+)default: \"(?<prefix>[^:]+):(?<currentValue>[^\"]+)\""
     ],
-    "versioningTemplate": "{{{versioning}}}"
+    "versioningTemplate": "{{{versioning}}}",
+    "autoReplaceStringTemplate": "# renovate-tag: datasource={{{datasource}}} depName={{{depName}}} versioning={{{versioning}}}\n{{{indent}}}default: \"{{{prefix}}}:{{{replace '[+]k3s' '-k3s' newValue}}}\""
   }
 ]
 }
