@@ -152,7 +152,7 @@
   "customManagers": [
   {
     "customType": "regex",
-    "fileMatch": ["^zarf\\.yaml$"],
+    "fileMatch": ["(^|/)zarf\\.yaml$"],
     "matchStrings": [
       "# renovate-tag: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n\\s+default: \"[^:]+:(?<currentValue>[^\"]+)\""
     ],
