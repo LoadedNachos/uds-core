@@ -148,10 +148,6 @@
       ],
       "allowedVersions": "!/99.99.99/"
     },
-    {
-      "matchPackageNames": ["ghcr.io/defenseunicorns/uds-k3d/k3s"],
-      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-k3s(?<build>\\d+)$"
-    }
   ],
   "customManagers": [
   {
