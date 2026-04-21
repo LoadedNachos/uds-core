@@ -11,7 +11,7 @@ variables:
   - name: K3D_IMAGE
     description: "K3d image to use"
     # renovate-tag: datasource=github-releases depName=k3s-io/k3s versioning=semver
-    default: "ghcr.io/defenseunicorns/uds-k3d/k3s:v1.34.4-k3s1"
+    default: "ghcr.io/defenseunicorns/uds-k3d/k3s:v1.29.0-k3s1"
   - name: VELERO_BUCKET_PROVIDER_URL
     description: "S3 compatible object storage service for use with Velero"
     default: "http://minio.uds-dev-stack.svc.cluster.local:9000"
