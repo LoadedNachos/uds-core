@@ -148,5 +148,15 @@
       ],
       "allowedVersions": "!/99.99.99/"
     }
-  ]
+  ],
+  "customManagers": [
+  {
+    "customType": "regex",
+    "fileMatch": ["^zarf\\.yaml$"],
+    "matchStrings": [
+      "# renovate-tag: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n\\s+default: \"[^:]+:(?<currentValue>[^\"]+)\""
+    ],
+    "versioningTemplate": "{{{versioning}}}"
+  }
+]
 }
