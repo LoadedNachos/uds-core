@@ -84,7 +84,7 @@ jobs:
     strategy:
       matrix:
         # renovate: datasource=docker depName=rancher/k3s versioning=semver
-        k3s-version: ["v1.29.0-k3s1"]
+        version: ["v1.29.0-k3s1"]
     permissions:
       id-token: write # Needed for OIDC-related operations.
       contents: read # Allows reading the content of the repository.
