@@ -154,14 +154,14 @@
     }
   ],
   "customManagers": [
-  {
-    "customType": "regex",
-    "fileMatch": ["(^|/)zarf\\.yaml$"],
-    "matchStrings": [
-      "# renovate-tag: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n(?<indent>\\s+)default: \"(?<prefix>[^:]+):(?<currentValue>[^\"]+)\""
-    ],
-    "versioningTemplate": "{{{versioning}}}",
-    "autoReplaceStringTemplate": "# renovate-tag: datasource={{{datasource}}} depName={{{depName}}} versioning={{{versioning}}}\n{{{indent}}}default: \"{{{prefix}}}:{{{newValue}}}\""
-  }
-]
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.github/workflows/.*\\.yaml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\n(?<indent>\\s+)version: \\[\"(?<currentValue>[^\"]+)\"\\]"
+      ],
+      "versioningTemplate": "{{{versioning}}}",
+      "autoReplaceStringTemplate": "# renovate: datasource={{{datasource}}} depName={{{depName}}} versioning={{{versioning}}}\n{{{indent}}}version: [\"{{{newValue}}}\"]"
+    }
+  ]
 }

@@ -10,7 +10,7 @@ metadata:
 variables:
   - name: K3D_IMAGE
     description: "K3d image to use"
-    # renovate-tag: datasource=docker depName=rancher/k3s versioning=semver
+    # renovate: datasource=docker depName=rancher/k3s versioning=semver
     default: "ghcr.io/defenseunicorns/uds-k3d/k3s:v1.29.0-k3s1"
   - name: VELERO_BUCKET_PROVIDER_URL
     description: "S3 compatible object storage service for use with Velero"
